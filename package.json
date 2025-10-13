@@ -1,0 +1,17 @@
+{
+  "name": "automatic-tribble",
+  "version": "1.0.0",
+  "description": "Hello World Node.js library",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --reporters=default --reporters=jest-junit"
+  },
+  "devDependencies": {
+    "jest": "^29.0.0",
+    "jest-junit": "^16.0.0"
+  },
+  "jest-junit": {
+    "outputDirectory": "./",
+    "outputName": "junit.xml"
+  }
+}
