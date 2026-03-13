@@ -3,8 +3,14 @@
 name: Hello World
 on: [push]
 jobs:
-  Hello-World-Job:
+  StepOne:
     runs-on:
       - codebuild-GHARunner-${{ github.run_id }}-${{ github.run_attempt }}
     steps:
-      - run: echo "Hello World"
+      - run: echo "This is Step 1"
+  StepTwo:
+    runs-on:
+      - codebuild-GHARunnerStageTwo-${{ github.run_id }}-${{ github.run_attempt }}
+    steps:
+      - run: echo "This is Step 2"
+
