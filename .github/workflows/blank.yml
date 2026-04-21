@@ -6,11 +6,13 @@ jobs:
   StepOne:
     runs-on:
       - codebuild-GHARunner-${{ github.run_id }}-${{ github.run_attempt }}
+    environment: Dev
     steps:
       - run: echo "This is Step 1"
   StepTwo:
     runs-on:
       - codebuild-GHARunnerStageTwo-${{ github.run_id }}-${{ github.run_attempt }}
+    environment: Dev
     steps:
       - run: echo "This is Step 2"
 
