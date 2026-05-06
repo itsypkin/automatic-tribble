@@ -6,8 +6,9 @@ on:
 jobs:
   build-1:
     runs-on:
-      - codebuild-LargeGithubConnectiion2-${{ github.run_id }}-${{ github.run_attempt }}-1
+      - codebuild-LargeGithubConnectiion2-${{ github.run_id }}-${{ github.run_attempt }}
       - instance-size:small
+      - seqId:1
     environment: Dev
     steps:
       - run: |
@@ -16,8 +17,9 @@ jobs:
 
   build-2:
     runs-on:
-      - codebuild-LargeGithubConnectiion2-${{ github.run_id }}-${{ github.run_attempt }}-2
+      - codebuild-LargeGithubConnectiion2-${{ github.run_id }}-${{ github.run_attempt }}
       - instance-size:large
+      - seqId:2
     environment: Dev
     steps:
       - run: |
@@ -26,7 +28,9 @@ jobs:
 
   build-3:
     runs-on:
-      - codebuild-LargeGithubConnectiion2-${{ github.run_id }}-${{ github.run_attempt }}-3
+      - codebuild-LargeGithubConnectiion2-${{ github.run_id }}-${{ github.run_attempt }}
+      - instance-size:medium
+      - seqId:3
     environment: Dev
     steps:
       - run: |
