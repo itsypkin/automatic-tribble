@@ -3,10 +3,12 @@ name: CodeBuild Load Test
 on:
   workflow_dispatch:
 
+
 jobs:
   build-1:
     runs-on:
       - codebuild-LargeGithubConnectiion2-${{ github.run_id }}-${{ github.run_attempt }}
+      - instance-size:small
     environment: Dev
     steps:
       - run: |
@@ -16,6 +18,7 @@ jobs:
   build-2:
     runs-on:
       - codebuild-LargeGithubConnectiion2-${{ github.run_id }}-${{ github.run_attempt }}
+      - instance-size:large
     environment: Dev
     steps:
       - run: |
