@@ -1,0 +1,15 @@
+name: CodeBuild Load Test
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build-1:
+    runs-on:
+      - codebuild-CaseV2238742567-${{ github.run_id }}-${{ github.run_attempt }}
+        image:aws/codebuild/amazonlinux-x86_64-standard:5.0-23.05.22
+    environment: Dev
+    steps:
+      - run: |
+          sleep $((RANDOM % 30 + 1))
+          echo "Hi world"
